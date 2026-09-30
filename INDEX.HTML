@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>For Namira ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<canvas id="space"></canvas>
+<canvas id="particles"></canvas>
+
+<div class="cursor-glow"></div>
+
+<div id="floatingHearts"></div>
+
+<!-- LOADING -->
+
+<div id="loader">
+
+    <div class="loader-ring"></div>
+
+    <div class="loader-heart">♥</div>
+
+    <div class="loader-text">
+        INITIALIZING...
+    </div>
+
+</div>
+
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-button" id="musicButton">
+    ♫
+</button>
+
+
+<!-- INTRO -->
+
+<section class="page active" id="intro">
+
+    <div class="intro-orbit">
+
+        <div class="orbit-line orbit1"></div>
+        <div class="orbit-line orbit2"></div>
+
+        <div class="core-heart">
+            ♥
+        </div>
+
+    </div>
+
+    <div class="tiny-label">
+        A PRIVATE MESSAGE
+    </div>
+
+    <h1>
+        NAMIRA
+        <span>♥</span>
+    </h1>
+
+    <p class="intro-sub">
+        This isn't just another "sorry".
+        <br>
+        I made something for you.
+    </p>
+
+    <button class="enter-button" id="enterButton">
+
+        <span>ENTER MY LITTLE WORLD</span>
+
+        <strong>→</strong>
+
+    </button>
+
+    <div class="scroll-hint">
+        ↓
+    </div>
+
+</section>
+
+
+<!-- APOLOGY -->
+
+<section class="page" id="apology">
+
+    <div class="page-number">
+        01 / 05
+    </div>
+
+    <div class="cinematic-card">
+
+        <div class="card-glow"></div>
+
+        <div class="small-heart">
+            ♥
+        </div>
+
+        <div class="eyebrow">
+            SOMETHING I WANT YOU TO KNOW
+        </div>
+
+        <h2>
+            Namira...
+        </h2>
+
+        <div class="typing-area">
+            <span id="typingText"></span>
+            <span class="typing-cursor">|</span>
+        </div>
+
+        <button class="continue-button" data-next="memories">
+            I'M LISTENING →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section class="page" id="memories">
+
+    <div class="page-number">
+        02 / 05
+    </div>
+
+    <div class="section-heading">
+
+        <div class="eyebrow">
+            BEFORE EVERYTHING ELSE
+        </div>
+
+        <h2>
+            Remember us?
+        </h2>
+
+        <p>
+            Tap each memory.
+        </p>
+
+    </div>
+
+
+    <div class="memory-grid">
+
+        <article class="memory" data-message="The little moments somehow became my favorite ones.">
+
+            <div class="memory-number">
+                01
+            </div>
+
+            <div class="memory-symbol">
+                ♡
+            </div>
+
+            <h3>
+                Little Things
+            </h3>
+
+            <span>
+                TAP TO REVEAL
+            </span>
+
+        </article>
+
+
+        <article class="memory" data-message="Your smile has been part of some of my happiest memories.">
+
+            <div class="memory-number">
+                02
+            </div>
+
+            <div class="memory-symbol">
+                ✦
+            </div>
+
+            <h3>
+                Your Smile
+            </h3>
+
+            <span>
+                TAP TO REVEAL
+            </span>
+
+        </article>
+
+
+        <article class="memory" data-message="Even the stupid, random moments are memories I wouldn't trade.">
+
+            <div class="memory-number">
+                03
+            </div>
+
+            <div class="memory-symbol">
+                ∞
+            </div>
+
+            <h3>
+                Our Moments
+            </h3>
+
+            <span>
+                TAP TO REVEAL
+            </span>
+
+        </article>
+
+    </div>
+
+
+    <button class="continue-button hidden" id="memoryContinue" data-next="heart">
+        KEEP GOING →
+    </button>
+
+</section>
+
+
+<!-- HEART -->
+
+<section class="page" id="heart">
+
+    <div class="page-number">
+        03 / 05
+    </div>
+
+    <div class="heart-section">
+
+        <div class="eyebrow">
+            SOMETHING I WISH I COULD FIX
+        </div>
+
+        <h2>
+            Maybe some things
+            <br>
+            can heal.
+        </h2>
+
+        <p class="instruction">
+            Touch and hold the heart.
+        </p>
+
+        <div class="repair-heart" id="repairHeart">
+
+            <div class="heart-shape">
+                ♥
+            </div>
+
+            <div class="crack"></div>
+
+        </div>
+
+        <div class="progress-track">
+
+            <div id="progress"></div>
+
+        </div>
+
+        <div class="progress-text" id="progressText">
+            0%
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NO EXCUSES -->
+
+<section class="page" id="truth">
+
+    <div class="page-number">
+        04 / 05
+    </div>
+
+    <div class="truth-card">
+
+        <div class="quote">
+            “
+        </div>
+
+        <div class="eyebrow">
+            NO EXCUSES
+        </div>
+
+        <h2>
+            I'm not here
+            <br>
+            to win an argument.
+        </h2>
+
+        <p>
+            I'm here because I care about how you feel.
+        </p>
+
+        <p>
+            I don't expect a website to magically
+            fix everything.
+        </p>
+
+        <p>
+            I just wanted to put in the effort
+            to tell you that I'm genuinely sorry.
+        </p>
+
+        <button class="continue-button" data-next="final">
+            ONE LAST THING →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="page" id="final">
+
+    <div class="final-stars"></div>
+
+    <div class="final-container">
+
+        <div class="final-heart">
+            ♥
+        </div>
+
+        <div class="eyebrow">
+            FOR SOMEONE SPECIAL
+        </div>
+
+        <h1>
+            NAMIRA
+        </h1>
+
+        <div class="final-line"></div>
+
+        <p>
+            I don't expect you to stop being angry
+            just because I made this.
+        </p>
+
+        <p>
+            I just wanted you to know...
+        </p>
+
+        <h2>
+            I'm sorry.
+        </h2>
+
+        <p>
+            And whenever you're ready,
+            I'm here to listen.
+        </p>
+
+        <button class="final-button" id="choiceButton">
+            YOUR CHOICE
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CHOICE MODAL -->
+
+<div class="modal" id="choiceModal">
+
+    <div class="modal-box">
+
+        <button class="close-modal" id="closeModal">
+            ×
+        </button>
+
+        <div class="modal-heart">
+            ♥
+        </div>
+
+        <div class="eyebrow">
+            NAMIRA'S CHOICE
+        </div>
+
+        <h2>
+            You don't have to pretend.
+        </h2>
+
+        <p>
+            Say whatever you really feel.
+        </p>
+
+
+        <div class="choice-list">
+
+            <button data-choice="forgive">
+                ❤️ I forgive you
+            </button>
+
+            <button data-choice="time">
+                🥺 I need some time
+            </button>
+
+            <button data-choice="angry">
+                😤 I'm still angry
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- RESPONSE -->
+
+<div class="response" id="response">
+
+    <div class="response-box">
+
+        <div id="responseEmoji">
+            ❤️
+        </div>
+
+        <h2 id="responseTitle">
+            Thank you.
+        </h2>
+
+        <p id="responseMessage">
+        </p>
+
+        <button id="responseClose">
+            CLOSE
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- SUCCESS -->
+
+<div id="success">
+
+    <div class="success-heart">
+        ♥
+    </div>
+
+    <h2>
+        Thank you, Namira.
+    </h2>
+
+    <p>
+        Now come talk to me. ❤️
+    </p>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
